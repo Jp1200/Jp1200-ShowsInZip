@@ -1,0 +1,5 @@
+CLIENT_ID = 04OIN2AY10DSIZQ5SAH2VUDWMGBDENIVGBGAHDBZKFCWLWOR
+
+CLIENT_SECRET =1MU4G2V2SQ3VRQNVAML343FUSBJEDKYLQJ24RTKJH022V5ZB
+# API for FourSquare
+# for more info: https://developer.foursquare.com/docs/api-reference/venues/search/
