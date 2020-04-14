@@ -23,7 +23,7 @@ export default class Navigation extends React.Component{
 
       <section className="hero" id="hero">
         <h2 className="hero_header">VroFi <span className="light">Music</span></h2>
-        <p className="tagline">What does your city sound like tonight?</p>
+        <p className="tagline">Live music in your city</p>
       </section>
 
 

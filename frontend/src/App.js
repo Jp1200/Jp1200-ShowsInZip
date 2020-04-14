@@ -11,11 +11,11 @@ import Home from './Home.js'
 
 function App() {
   return (
-    <div className="container">
+    <div>
       <Home/>
 
     </div>
-  );
+  )
 }
 
 export default App;

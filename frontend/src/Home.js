@@ -2,8 +2,8 @@ import React from 'react';
 import FacebookLogin from "./Login.js"
 import LoginSite from './LoginSite.js'
 import Navigation from './Navigation.js'
-import logo from './VroFi Logo V1.png';
-
+import logo from './VroFi Logo V6.jpg';
+import FindShows from './FindShows.js'
 
 export default class Home extends React.Component{
 
@@ -15,6 +15,7 @@ export default class Home extends React.Component{
       picture: '',
       accessToken: ''
     }
+
   handleLogin = event =>{
 
   }
@@ -40,6 +41,7 @@ export default class Home extends React.Component{
         <header> <center><img src={logo} alt="" width="115" height="115"/>
       	  </center>
           <Navigation/>
+          <FindShows />
         </header>
         </div>
       )
