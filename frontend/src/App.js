@@ -1,19 +1,19 @@
 import React from 'react';
-import {logo} from './VroFi Logo V1.png';
+
 import './singlePageTemplate.css';
+// import { Box, Button, Heading, Grommet } from 'grommet';
+
+import Home from './Home.js'
+
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>VroFi Music</h1>
-        <image src={logo}/>
+    <div className="container">
+      <Home/>
 
-
-
-
-
-      </header>
     </div>
   );
 }
