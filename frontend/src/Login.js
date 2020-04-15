@@ -11,7 +11,7 @@ class LoginFacebook extends React.Component {
     return (
       <FacebookLogin
         appId="1142671056072934"
-        autoLoad={true}
+        autoLoad={false}
         fields="name,email,picture"
         onClick={this.props.componentClicked}
         callback={this.props.responseFacebook}

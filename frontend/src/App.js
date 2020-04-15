@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './singlePageTemplate.css';
 // import { Box, Button, Heading, Grommet } from 'grommet';
 
@@ -12,9 +11,10 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 function App() {
   return (
     <div>
+      <Router>
+        <Route path="/" component={Home} />
 
-      <Home/>
-
+      </Router>
     </div>
   )
 }

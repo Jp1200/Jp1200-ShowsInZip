@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { NavLink } from 'react-router-dom';
 export default class Navigation extends React.Component{
 
 
@@ -14,9 +15,17 @@ export default class Navigation extends React.Component{
       <div>
         <nav>
           <ul>
-            <li><a href="http://www.vrofi.com">HOME</a></li>
-            <li><a href="http://www.vrofi.com">FIND SHOWS</a></li>
-            <li> <a href="http://www.vrofi.com">PROFILE</a></li>
+            <li><NavLink
+              to="/"
+              > HOME
+            </NavLink>
+            </li>
+            <li><NavLink to='/find'>FIND SHOWS</NavLink></li>
+            <li><NavLink
+              to='/profile'
+              >PROFILE
+
+            </NavLink></li>
           </ul>
         </nav>
 
