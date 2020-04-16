@@ -8,7 +8,7 @@ export default class LoginSite extends React.Component{
     return(
       <div className='container'>
         <form
-          onSubmit={this.props.handleLogin}
+          onSubmit={this.props.handleSignup}
           >Login/Signup without Facebook
           <br/>
           <label name='name'for='name'>Name</label>

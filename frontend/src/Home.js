@@ -18,7 +18,7 @@ export default class Home extends React.Component{
       accessToken: ''
     }
 
-  handleLogin = event =>{
+  handleSignup = event =>{
     event.preventDefault()
     console.log(event.target.email.value)
     console.log(event.target.name.value)
@@ -38,15 +38,18 @@ export default class Home extends React.Component{
       })
     })
     .then(r=>r.json())
-    .catch(error=>alert(error))
     .then(response=>{
+      if(response === Object){
       this.setState({
-        userID: response.user_id,
+        userID: `${response.id}`,
         name: response.name,
         email: response.email,
         isLoggedIn: true
       })
-    })
+    }
+  })
+  .catch(error=>alert(error))
+
 
   }
   componentClicked = () => {
@@ -90,7 +93,7 @@ export default class Home extends React.Component{
           <br/>
           <br/>
           <br/>
-          <LoginSite handleLogin={this.handleLogin}/>
+          <LoginSite handleSignup={this.handleSignup}/>
         	  </center>
 
           </header>
