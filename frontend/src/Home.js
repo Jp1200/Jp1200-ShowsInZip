@@ -41,9 +41,9 @@ export default class Home extends React.Component{
     .catch(error=>alert(error))
     .then(response=>{
       this.setState({
-        userID: '',
-        name: '',
-        email: '',
+        userID: response.user_id,
+        name: response.name,
+        email: response.email,
         isLoggedIn: true
       })
     })
