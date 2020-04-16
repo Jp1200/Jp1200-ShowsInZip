@@ -11,6 +11,7 @@ export default class Home extends React.Component{
 
     state = {
       isLoggedIn: false,
+      isLoggedInFb: false,
       userID: '',
       name:'',
       email:'',
@@ -39,32 +40,61 @@ export default class Home extends React.Component{
     })
     .then(r=>r.json())
     .then(response=>{
-      if(response === Object){
+
       this.setState({
         userID: `${response.id}`,
         name: response.name,
         email: response.email,
         isLoggedIn: true
+        })
+      }
+    )
+
+  .catch(error=>alert(error.message))
+
+}
+  handleLogin = event => {
+    event.preventDefault();
+    console.log('Clicked!');
+    fetch(`http://localhost:3000/users/login`,{
+      method:'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
+      body: JSON.stringify({
+        email: event.target.email.value,
+        password: event.target.password.value
+
       })
-    }
-  })
-  .catch(error=>alert(error))
-
-
+    })
+    .then(r=>r.json())
+    .then(response=>{
+      this.setState({
+        userID: `${response.id}`,
+        name: response.name,
+        email: response.email,
+        isLoggedIn: true
+        })
+    })
+    .catch(error=>alert(error.message))
   }
   componentClicked = () => {
-    console.log('clicked!')
+    console.log('FB Activated')
   }
 
   responseFacebook = response=> {
+    console.log(response)
     this.setState({
       isLoggedIn: true,
+      isLoggedInFb: true,
       userID: response.id,
       name: response.name,
       email: response.email,
       picture: response.picture.data.url,
       accessToken: response.accessToken
-    });
+    })
   }
 
   render(){
@@ -72,12 +102,19 @@ export default class Home extends React.Component{
     if (this.state.isLoggedIn){
       return(
         <div className='container'>
-          <Router>
+        <Router>
+
         <header> <center><img src={logo} alt="" width="115" height="115"/>
+
       	  </center>
           <Navigation/>
-          <Route path='/find' component={FindShows}/>
-          <Route path='/profile' component={Profile}/>
+          <Profile profileData={this.state}/>
+          <Route exact path='/find' component={FindShows}/>
+          {/* <Route exact path='/profile' render={
+            (props)=> <Profile profileData={this.state}/>
+          }/> */}
+
+
         </header>
         </Router>
         </div>
@@ -93,7 +130,7 @@ export default class Home extends React.Component{
           <br/>
           <br/>
           <br/>
-          <LoginSite handleSignup={this.handleSignup}/>
+          <LoginSite handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
         	  </center>
 
           </header>

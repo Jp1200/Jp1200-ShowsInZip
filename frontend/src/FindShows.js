@@ -1,5 +1,7 @@
 import React from 'react';
 // import './singlePageTemplate.css';
+import EventCard from './EventCard.js'
+const eventCards =''
 export default class FindShows extends React.Component{
   state = {
     shows: [],
@@ -22,10 +24,19 @@ export default class FindShows extends React.Component{
       this.setState({
         shows: json
       });
+      // this.handleCards(this.state.shows)
 
 
 
     })
+  }
+  componentDidUpdate(prevState){
+    if (this.state.shows !== prevState.shows){
+      const eventCards = this.state.shows.results.map((event,key)=>{
+        console.log(event)
+        return <EventCard data={event} key={key}/>
+      })
+    }
   }
   handleChange = event=> {
     this.setState({
@@ -36,17 +47,21 @@ export default class FindShows extends React.Component{
     event.preventDefault();
     this.handleEventForm();
   }
+  handleCards = shows => {
+
+  }
   render(){
+
 
     return(
       <section className="about" id="about">
         <h2 className="hidden">About</h2>
         <form>
-          <label for="birthday">Play Music for Bands playing on: </label>
+          <label for="birthday">Find Music around this date: </label>
           <input type="date" id="birthday" name="birthday" onChange={this.handleChange}/>
           <input type='submit' id='submit' name='submit' onClick={this.handleSubmit}/>
         </form>
-
+        {eventCards}
       </section>
     )
   }
