@@ -5,8 +5,17 @@ import Navigation from './Navigation.js'
 import logo from './VroFi Logo V6.jpg';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import FindShows from './FindShows.js'
-import Profile from './Profile.js'
 
+import Gallery from './Gallery.js'
+import './singlePageTemplate.css'
+// const imgUrl = 'frontend/src/Seattle.jpg'
+// const styles = {
+//   root:{
+//   backgroundImage: 'url('+ imgUrl +')',
+//   backgroundSize: 'cover',
+//   overflow: 'hidden',
+//   }
+// }
 export default class Home extends React.Component{
 
     state = {
@@ -18,6 +27,7 @@ export default class Home extends React.Component{
       picture: '',
       accessToken: ''
     }
+
 
   handleSignup = event =>{
     event.preventDefault()
@@ -101,14 +111,14 @@ export default class Home extends React.Component{
 
     if (this.state.isLoggedIn){
       return(
-        <div className='container'>
+        <div >
         <Router>
 
         <header> <center><img src={logo} alt="" width="115" height="115"/>
 
       	  </center>
-          <Navigation/>
-          <Profile profileData={this.state}/>
+          <Navigation profileData={this.state}/>
+
           <Route exact path='/find' component={FindShows}/>
           {/* <Route exact path='/profile' render={
             (props)=> <Profile profileData={this.state}/>
@@ -116,13 +126,18 @@ export default class Home extends React.Component{
 
 
         </header>
+        <Gallery />
         </Router>
         </div>
       )
     } else {
       return(
-        <div className='container'>
+        <div>
           <header> <center><img src={logo} alt="" width="115" height="115"/>
+
+        	   </center>
+
+          </header><center>
           <br/>
           <br/>
           <br/>
@@ -131,10 +146,7 @@ export default class Home extends React.Component{
           <br/>
           <br/>
           <LoginSite handleSignup={this.handleSignup} handleLogin={this.handleLogin}/>
-        	  </center>
-
-          </header>
-
+        </center>
         </div>
       )
     }

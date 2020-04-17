@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Profile from './Profile.js'
 import { NavLink } from 'react-router-dom';
 export default class Navigation extends React.Component{
 
@@ -21,11 +21,9 @@ export default class Navigation extends React.Component{
             </NavLink>
             </li>
             <li><NavLink to='/find'>FIND SHOWS</NavLink></li>
-            <li><NavLink
-              to='/profile'
-              >PROFILE
-
-            </NavLink></li>
+            <li>
+          <Profile profileData={this.props.profileData}/>
+        </li>
           </ul>
         </nav>
 

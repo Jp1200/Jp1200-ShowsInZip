@@ -1,7 +1,7 @@
 import React from 'react';
 // import './singlePageTemplate.css';
 import EventCard from './EventCard.js'
-const eventCards =''
+
 export default class FindShows extends React.Component{
   state = {
     shows: [],
@@ -22,7 +22,7 @@ export default class FindShows extends React.Component{
     .then(resp=>resp.json())
     .then(json=>{
       this.setState({
-        shows: json
+        shows: json.results
       });
       // this.handleCards(this.state.shows)
 
@@ -30,14 +30,7 @@ export default class FindShows extends React.Component{
 
     })
   }
-  componentDidUpdate(prevState){
-    if (this.state.shows !== prevState.shows){
-      const eventCards = this.state.shows.results.map((event,key)=>{
-        console.log(event)
-        return <EventCard data={event} key={key}/>
-      })
-    }
-  }
+
   handleChange = event=> {
     this.setState({
       search: event.target.value
@@ -47,9 +40,10 @@ export default class FindShows extends React.Component{
     event.preventDefault();
     this.handleEventForm();
   }
-  handleCards = shows => {
 
-  }
+
+
+
   render(){
 
 
@@ -57,11 +51,16 @@ export default class FindShows extends React.Component{
       <section className="about" id="about">
         <h2 className="hidden">About</h2>
         <form>
-          <label for="birthday">Find Music around this date: </label>
+          <label htmlFor="birthday">Find Music around this date: </label>
           <input type="date" id="birthday" name="birthday" onChange={this.handleChange}/>
           <input type='submit' id='submit' name='submit' onClick={this.handleSubmit}/>
         </form>
-        {eventCards}
+
+          { this.state.shows.map((event,key)=>
+
+
+             <EventCard data={event} key={key}/>)}
+
       </section>
     )
   }

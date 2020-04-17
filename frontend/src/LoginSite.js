@@ -6,17 +6,17 @@ export default class LoginSite extends React.Component{
 
   render(){
     return(
-      <div className='container'>
+      <div>
         <form
           className ='Signup'
           onSubmit={this.props.handleSignup}
           >Signup without Facebook
           <br/>
-          <label name='name'for='name'>Name</label>
+          <label name='name'htmlFor='name'>Name</label>
           <input type='text'name='name'></input><br/>
-          <label name='email' for='email'>Email</label>
+          <label name='email' htmlFor='email'>Email</label>
           <input type='email' name='email'></input><br/>
-          <label name='password'for='password'>Password</label>
+          <label name='password'htmlFor='password'>Password</label>
           <input type='password'name='password'></input><br/>
           <input type='submit' value='submit' ></input>
 
@@ -27,9 +27,9 @@ export default class LoginSite extends React.Component{
           onSubmit={this.props.handleLogin}
           >Login
           <br/>
-          <label name='email' for='email'>Email</label>
+          <label name='email' htmlFor='email'>Email</label>
           <input type='email' name='email'></input><br/>
-          <label name='password'for='password'>Password</label>
+          <label name='password' htmlFor='password'>Password</label>
           <input type='password'name='password'></input><br/>
           <input type='submit' value='submit' ></input>
 
