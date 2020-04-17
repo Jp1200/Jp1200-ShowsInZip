@@ -18,6 +18,18 @@ body {
 	height: 1000px;
 	background-color: #FFFFFF;
 }
+.eventcard {
+	height: 150px;
+	width: 350px;
+	margin-left: 33px;
+	background-color: #99ccff;
+	border-spacing: 10px;
+}
+.eventcard:hover {
+	background-color: #FEFEFE;
+	color: #C4C4C4;
+	cursor: pointer;
+}
 /* Navigation */
 header {
 	width: 100%;

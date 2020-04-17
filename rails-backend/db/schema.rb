@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 2020_04_13_145712) do
 
   create_table "bands", force: :cascade do |t|
     t.string "band_name"
-    t.string "hometown"
     t.string "bandcamp_url"
     t.integer "iframe_num"
     t.datetime "created_at", precision: 6, null: false
@@ -28,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_04_13_145712) do
 
   create_table "events", force: :cascade do |t|
     t.string "location"
+    t.string "title"
     t.string "show_date"
     t.string "venue_name"
     t.datetime "created_at", precision: 6, null: false
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2020_04_13_145712) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "password"
+    t.string "password_digest"
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

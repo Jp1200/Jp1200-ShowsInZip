@@ -66,7 +66,7 @@ export default class Home extends React.Component{
   handleLogin = event => {
     event.preventDefault();
     console.log('Clicked!');
-    fetch(`http://localhost:3000/users/login`,{
+    fetch(`http://localhost:3000/sessions/login`,{
       method:'POST',
       headers: {
         'Accept': 'application/json',

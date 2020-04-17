@@ -7,10 +7,12 @@ export default class FindShows extends React.Component{
     shows: [],
     search: ''
   }
+
   handleEventForm = ()=> {
     let aTokenPredictApi = 'utiLwEK0eWZiYEKna0e6Bg7nMI4RuCebW7wPE84L';
-    let categories = '?category=concerts&label=music'
-    let url = `https://api.predicthq.com/v1/events${categories}`;
+    let categories = '?category=concerts&label=music';
+    let startAround = (this.state.search === '') ? '' : `&start_around.origin=${this.state.search}`;
+    let url = `https://api.predicthq.com/v1/events${categories+startAround}`;
     fetch(url,{
       headers: {
         "Authorization": `Bearer ${aTokenPredictApi}`,
@@ -48,7 +50,7 @@ export default class FindShows extends React.Component{
 
 
     return(
-      <section className="about" id="about">
+      <section className="" id="">
         <h2 className="hidden">About</h2>
         <form>
           <label htmlFor="birthday">Find Music around this date: </label>
@@ -59,7 +61,7 @@ export default class FindShows extends React.Component{
           { this.state.shows.map((event,key)=>
 
 
-             <EventCard data={event} key={key}/>)}
+             <EventCard data={event} key={key} />)}
 
       </section>
     )
