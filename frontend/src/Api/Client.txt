@@ -1,0 +1,10 @@
+
+
+PredictHQ:
+Client Id: nw8X0cVKRvE
+Client secret: eGM4AyhqIbd1_0VN1W_R1ytV2tiK26dYLwt39xWYvxO3q2WU797GVg
+accessToken: utiLwEK0eWZiYEKna0e6Bg7nMI4RuCebW7wPE84L
+
+
+FourSquare Api (Not very good)
+`https://api.foursquare.com/v2/venues/search?near=austin&client_id=04OIN2AY10DSIZQ5SAH2VUDWMGBDENIVGBGAHDBZKFCWLWOR&client_secret=1MU4G2V2SQ3VRQNVAML343FUSBJEDKYLQJ24RTKJH022V5ZB&v=20190412`

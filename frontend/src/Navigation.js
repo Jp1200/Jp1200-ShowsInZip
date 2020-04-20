@@ -1,5 +1,6 @@
 import React from 'react';
-
+import Profile from './Profile.js'
+import { NavLink } from 'react-router-dom';
 export default class Navigation extends React.Component{
 
 
@@ -14,16 +15,22 @@ export default class Navigation extends React.Component{
       <div>
         <nav>
           <ul>
-            <li><a href="http://www.vrofi.com">HOME</a></li>
-            <li><a href="http://www.vrofi.com">FIND SHOWS</a></li>
-            <li> <a href="http://www.vrofi.com">PROFILE</a></li>
+            <li><NavLink
+              to="/"
+              > HOME
+            </NavLink>
+            </li>
+            <li><NavLink to='/find'>FIND SHOWS</NavLink></li>
+            <li>
+          <Profile profileData={this.props.profileData}/>
+        </li>
           </ul>
         </nav>
 
 
       <section className="hero" id="hero">
         <h2 className="hero_header">VroFi <span className="light">Music</span></h2>
-        <p className="tagline">What does your city sound like tonight?</p>
+        <p className="tagline">Live music in your city</p>
       </section>
 
 

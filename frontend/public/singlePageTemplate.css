@@ -9,16 +9,26 @@ body {
 	margin-left: 0px;
 	font-style: normal;
 	font-weight: 200;
-	background-image: url(./Seattle.jpg);
 }
-
 /* Container */
 .container {
-	width: 100%;
+	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
-	height: 200px;
-	background-color: #ffffff;
+	height: 1000px;
+	background-color: #FFFFFF;
+}
+.eventcard {
+	height: 150px;
+	width: 350px;
+	margin-left: 33px;
+	background-color: #99ccff;
+	border-spacing: 10px;
+}
+.eventcard:hover {
+	background-color: #FEFEFE;
+	color: #C4C4C4;
+	cursor: pointer;
 }
 /* Navigation */
 header {
